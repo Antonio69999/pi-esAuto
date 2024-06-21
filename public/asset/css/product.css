@@ -1,0 +1,156 @@
+*{
+  font-family: Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --font-color:grey;
+  --block-bg-banner:#3281ff;
+  --bg-footer:#1c1a32;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  scrollbar-color: white grey;
+  display: flex;
+  flex-direction: column; 
+}
+body::-webkit-scrollbar {
+  scrollbar-color: white grey;
+}
+main {
+  width: 100vw;
+  min-height:100vh;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+.brandproduct{
+  margin-top:450px;
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+  overflow: hidden;
+  display:flex;
+  justify-content: space-evenly;
+}
+.brandproduct img {
+  width:200px;
+  height:auto;
+  margin: 0 20px;
+  object-fit: cover;
+}
+.banner{
+  position:relative;
+  height: 70px;
+  width: 100vw;
+  top:50px;
+  background:var(--block-bg-banner);
+  z-index: 50;
+}
+.banner h2{
+  position: absolute;
+  left: 50px;
+  top: -5px;
+  font-weight: 100;
+  font-size: 30px;
+  color: white;
+}
+#livraison{
+  position:relative;
+  width:90%;
+  margin-bottom:100px;
+  text-align:center;
+}
+#livraison h3{
+  color:var(--font-color);
+}
+.product {
+  position:relative;
+  margin-top:50px;
+  top:50px;
+  width:90%;
+  left:5%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.category-column {
+  color:var(--font-color);
+  margin: 0 10px 20px 10px;
+  padding: 10px;
+  height: 300px;
+  width:300px;
+  overflow-y: auto;
+  overflow-x:hidden;
+  border-radius:5px;
+  box-shadow: 0 1px 6px rgba(58,59,63,.2);
+}
+.category-column ul{
+  list-style-type: none;
+  list-style: none;
+  padding: 0;
+  width:300px;
+}
+.category-column ul li{
+  width:300px;
+}
+.category-name {
+  border-bottom:1px solid lightgray;
+}
+.reassurance{
+  height:130px;
+  min-width:100vw;
+  margin-top:50px;
+  background:rgb(198, 198, 198);
+  display:flex;
+  justify-content:space-evenly;
+}
+footer {
+  position: relative;
+  width:100vw;
+  height:200px;
+  margin-top:100px;
+  background:var(--bg-footer);
+}
+@media screen and (max-width: 1310px) {
+  .brandproduct{
+    margin-top:200px;
+  }
+  .banner{
+    top:100px;
+  }
+  .product {
+    top:150px;
+  }
+  footer{
+    margin-top:300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .product {
+    top:50px;
+  }
+  footer{
+    margin-top:100px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .banner {
+    top:50px;
+  }
+  .product{
+    top:50px;
+  }
+  .block_icon svg{
+    height:20px;
+    width:20px;
+  }
+  .block_icon span{
+    font-size:10px;
+    font-weight:lighter;
+    color:#3281ff;
+  }
+}
+

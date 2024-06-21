@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Loire Pièces Autos - Contact
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('asset/css/contact.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('asset/css/fotorama.css') }}"/>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <a href="{{ path ("app_home") }}">
+            <div class="logo"></div>
+        </a>
+        <h1>LOIRE PIECE AUTO</h1>
+        <p class="tel">tel : 04 81 91 25 36</p>
+        <div class="status">
+            <div class="dot" id="closedDot"></div>
+            <div style="color:red;font-size: 15px;" id="closed">Fermé</div>
+            <div class="dot" id="openDot"></div>
+            <div style="color:green;font-size: 15px;" id="open">Ouvert</div>
+        </div>
+        {% include 'menu/menu3.html.twig' %}
+        {% include 'menu/menu2.html.twig' %}
+    </header>
+    <div class="fotorama" data-width="100%" data-loop="true" data-autoplay="true">
+        <img src="asset/images/pieceauto.jpg">
+        <img src="asset/images/rayons.jpg">
+    </div>
+    <div class="brandcontact">
+        {% for marque in marques %}
+            {% set marqueImage = 'uploads/images/product/' ~ marque.logo %}
+            <img src="{{ asset (marqueImage) }}">
+        {% endfor %}
+    </div>
+    <div class="banner">
+        <h2>CONTACT ET DEVIS</h2>
+    </div>
+    <div class="contact">
+        {% for flashMessage in app.flashes('success') %}
+            <div class="flash">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        {{ form_start(form) }}
+        <p>
+            {{ form_widget(form.nom) }}
+        </p>
+        <p>
+            {{ form_widget(form.immatriculation) }}
+            {{ form_errors(form.immatriculation) }}
+        </p>
+        <p>
+            {{ form_widget(form.email) }}
+        </p>
+        <p>
+            {{ form_widget(form.sujet) }}
+        </p>
+        <p>
+            {{ form_widget(form.message) }}
+        </p>
+        {{ form_end(form) }}
+    </div>
+    <div class="adresse">
+        <h3>LOIRE PIECES AUTO</h3>
+        <p>10 Avenue Augustin Dupré,42000 Saint-Etienne</p>
+        <p>04 81 91 25 36</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.5978295023697!2d4.377608210261803!3d45.43760783509422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5aea6942aed7d%3A0xf21b1f8d52c1a371!2s10%20Av.%20Augustin%20Dupr%C3%A9%2C%2042000%20Saint-%C3%89tienne!5e0!3m2!1sfr!2sfr!4v1702555302830!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+    {% include 'component/reassurance.html.twig' %}
+    {% include 'footer/footer.html.twig' %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="{{ asset('asset/js/menu.js') }}"></script>
+    <script src="{{ asset('asset/js/fotorama.js') }}"></script>
+    <script src="{{ asset('asset/js/sticky.js') }}"></script>
+
+{% endblock %}

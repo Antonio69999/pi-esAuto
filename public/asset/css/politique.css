@@ -1,0 +1,37 @@
+:root {
+  --block-bg-color:white;
+  --font-color:rgb(32, 31, 31);
+  --block-bg-banner:#3281ff;
+  --bg-footer:#1c1a32;
+}
+body {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+#mentions {
+  width: 80%;
+  margin: 200px 10%;
+}
+h1{
+  color:white;
+}
+h2, h3{
+  color:var(--block-bg-banner);
+}
+p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color:var(--font-color);
+}
+strong{
+  color:var(--block-bg-banner);
+}
+@media screen and (max-width: 800px) {
+    #mentions {
+        margin: 170px 10%;
+    }
+}
+

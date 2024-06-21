@@ -1,0 +1,141 @@
+:root {
+  --font-color:grey;
+  --block-bg-banner:#3281ff;
+  --bg-footer:#1c1a32;
+}
+.fotorama img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.brandcontact{
+  margin-top:450px;
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+  overflow: hidden;
+  display:flex;
+  justify-content: space-evenly;
+}
+.brandcontact img {
+  width:200px;
+  height:auto;
+  margin: 0 20px;
+  object-fit: cover;
+}
+.banner{
+  position: relative;
+  top: 50px;
+  height: 70px;
+  width: 100vw;
+  z-index: 50;
+}
+.contact {
+  position: relative;
+  left: 50%;
+  margin:100px 0 50px;
+  width: 50%;
+  height:550px;
+  background-color: white;
+  transform: translateX(-50%);
+  padding:25px;
+  text-align:center;
+  color:white;
+  border-radius:5px;
+  background:rgb(237, 237, 237);
+}
+form{
+  position:absolute;
+  width:90%;
+  height:90%;
+  height:auto;
+  left:5%;
+  top:7%;
+}
+::placeholder {
+  color:white;
+  opacity:0.7;
+}
+
+input[type="text"]{
+  width:100%;
+  height:30px;
+  background:none;
+  border:1px solid #920404;
+  outline:none;
+  color:white;
+}
+input[type="email"]{
+  width:100%;
+  height:30px;
+  background:none;
+  border:1px solid #920404;
+  outline:none;
+  color:white;
+}
+textarea{
+  width:100%;
+  height:200px;
+  background:none;
+  border:1px solid #920404;
+  outline:none;
+  color:white;
+}
+textarea:focus, input:focus{
+  border:1px solid white;
+}
+#contact_submit{
+  width:130px;
+  height:30px;
+  background:none;
+  border:1px solid #920404;
+  outline:none;
+  color:white;
+  cursor:pointer;
+  transition:all 0.3s linear;
+}
+#contact_submit:hover{
+  background:#920404;
+}
+.flash {
+  margin-top:-10px;
+  color:white;
+}
+h3{
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+.map{
+  position:relative;
+  width:600px;
+  left:50%;
+  transform:translateX(-50%);
+  margin-bottom:50px;
+}
+.adresse{
+  width:100%;
+  text-align:center;
+  color:var(--block-bg-banner);
+}
+@media screen and (max-width: 1310px){
+  .brandcontact{
+    margin-top:200px;
+  }
+  .banner{
+    top:70px;
+  }
+  .contact {
+    margin:150px 0 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact{
+    width:80%;
+  }
+  .map {
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

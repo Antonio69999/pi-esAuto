@@ -1,0 +1,23 @@
+{% for flashMessage in app.flashes('success') %}
+    <div class="flash">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+{{ form_start(form) }}
+<p>
+    {{ form_widget(form.nom) }}
+</p>
+<p>
+    {{ form_widget(form.immatriculation) }}
+    {{ form_errors(form.immatriculation) }}
+</p>
+<p>
+    {{ form_widget(form.email) }}
+</p>
+<p>
+    {{ form_widget(form.sujet) }}
+</p>
+<p>
+    {{ form_widget(form.message) }}
+</p>
+{{ form_end(form) }}

@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+    <meta name="description" content="Loire Pièces auto, vente de pièces automobile aux professionnels et aux particuliers, en magasin et sur commande, toutes marques à un bon prix"/>
+{% endblock %}
+{% block title %}
+    Loire Pieces Autos, vente de pièces automobile pour professionnels et particulier, en magasin ou sur commande.
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="logo"></div>
+        <h1>LOIRE PIECE AUTO</h1>
+        <p class="tel">tel : 04 81 91 25 36</p>
+        <div class="status">
+            <div class="dot" id="closedDot"></div>
+            <div style="color:red;font-size: 15px;" id="closed">Fermé</div>
+            <div class="dot" id="openDot"></div>
+            <div style="color:green;font-size: 15px;" id="open">Ouvert</div>
+        </div>
+        {% include 'menu/menu1.html.twig' %}
+        {% include 'menu/menu2.html.twig' %}
+    </header>
+    <div id="top"></div>
+    <main>
+        <div class="brand">
+            {% for marque in marques %}
+                {% set marqueImage = 'uploads/images/product/' ~ marque.logo %}
+                <img src="{{ asset (marqueImage) }}">
+            {% endfor %}
+        </div>
+        <section id="devis">
+            <div class="banner">
+                <h2>DEVIS</h2>
+            </div>
+            <div id="contact">
+                <span>Pour toute demande de devis merci de remplir le formulaire</span>
+                {% include 'formulaire/formcontact.html.twig' %}
+            </div>
+            <div id="imgdevis">
+                <div class="fotorama" data-width="100%" data-loop="true" data-autoplay="true">
+                    <img src="asset/images/pieceauto.jpg">
+                    <img src="asset/images/rayons.jpg">
+                </div>
+            </div>
+        </section>
+        <section id="presentation">
+            <div class="banner">
+                <h2>QUI SOMMES-NOUS</h2>
+            </div>
+            <article class="left">
+                <h3>L'Equipe !</h3>
+                <p>
+                    Notre entreprise est un leader dans le secteur du commerce de détail d'équipements automobiles. Nous proposons une large gamme de produits, allant des pièces détachées aux accessoires, en passant par des équipements spécialisés pour répondre à tous les besoins des automobilistes. Nous mettons l'accent sur la qualité et l'innovation, collaborant avec les plus grandes marques pour garantir des produits fiables et performants. Avec une équipe experte et dévouée, nous offrons des conseils personnalisés et un service exceptionnel pour assurer la satisfaction de notre clientèle. Que vous soyez un amateur d'automobile ou un professionnel, notre entreprise est votre partenaire de confiance pour tous vos besoins en équipements automobiles.
+                </p>
+                <h3>Où nous trouver !</h3>
+                <p>
+                    Nous sommes situés à Saint-Étienne, tout près de la gare du Clapier, ce qui rend notre magasin facilement accessible, que vous veniez en voiture ou en transport en commun. Notre emplacement central vous permet de nous rendre visite sans difficulté, que vous soyez un habitant local ou que vous veniez des alentours. Nous disposons également d'un parking pour faciliter votre visite. Venez découvrir notre vaste sélection d'équipements automobiles et bénéficiez de l'expertise de notre équipe, prête à vous conseiller sur le meilleur choix pour vos besoins.
+                </p>
+            </article>
+            <div class="right">
+                <div id="block_img"></div>
+                <div></section>
+                {% include 'component/reassurance.html.twig' %}
+                <section id="produits">
+                    <div class="banner">
+                        <h2>EN STOCK</h2>
+                    </div>
+                    <div class="magasin">
+                        <a href="/" class="link">
+                            <p class="subtitle">en magasin</p>
+                        </a>
+                    </div>
+                    <div class="commande">
+                        <a href="/" class="link">
+                            <p class="subtitle">sur commande</p>
+                        </a>
+                    </div>
+                </section>
+                <section id="promos">
+                    <div class="banner">
+                        <h2>NOS PROMOS</h2>
+                    </div>
+                    {% if promotions is empty %}
+                        <p class="no_promo">Nous n'avons actuellement aucune pormotion</p>
+                    {% else %}
+                        {% for promotion in promotions %}
+                            <a href={{ path('app_promotion') }}>
+                                <div class="blockpromo">
+                                    {% if promotion.image is defined and promotion.image is not empty %}
+                                        {% set promotionImage = 'uploads/images/product/' ~ promotion.image %}
+                                        {% set imageSrc = asset(promotionImage) %}
+                                    {% else %}
+                                        {% set imageSrc = asset('asset/images/defaultPromo.png') %}
+                                    {% endif %}
+
+                                    <img src={{ imageSrc }} alt="Promotion Image">
+                                    <h3>Nos promos du moment</h3>
+                                    <h4>{{ promotion.name }}</h4>
+                                    <p>
+                                        {{ promotion.description }}
+                                    </p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                </section>
+                {% include 'component/reassurance.html.twig' %}
+                {% include 'footer/footer.html.twig' %}
+            </main>
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+            <script src="{{ asset('asset/js/fotorama.js') }}"></script>
+            <script src="{{ asset('asset/js/home.js') }}"></script>
+            <script src="{{ asset('asset/js/menu.js') }}"></script>
+            <script src="https://kit.fontawesome.com/074425bed5.js" crossorigin="anonymous"></script>
+        {% endblock %}
