@@ -25,7 +25,7 @@
     <main>
         <div class="brand">
             {% for marque in marques %}
-                {% set marqueImage = 'uploads/images/product/' ~ marque.logo %}
+                {% set marqueImage = 'uploads/images/marque/' ~ marque.image %}
                 <img src="{{ asset (marqueImage) }}">
             {% endfor %}
         </div>
@@ -85,21 +85,19 @@
                         <p class="no_promo">Nous n'avons actuellement aucune pormotion</p>
                     {% else %}
                         {% for promotion in promotions %}
-                            <a href={{ path('app_promotion') }}>
+                            <a href="#">
                                 <div class="blockpromo">
                                     {% if promotion.image is defined and promotion.image is not empty %}
-                                        {% set promotionImage = 'uploads/images/product/' ~ promotion.image %}
+                                        {% set promotionImage = 'uploads/images/promo/' ~ promotion.image %}
                                         {% set imageSrc = asset(promotionImage) %}
                                     {% else %}
-                                        {% set imageSrc = asset('asset/images/defaultPromo.png') %}
+                                        {% set imageSrc = asset('uploads/images/promo/pdefaultPromo.png') %}
                                     {% endif %}
 
                                     <img src={{ imageSrc }} alt="Promotion Image">
                                     <h3>Nos promos du moment</h3>
                                     <h4>{{ promotion.name }}</h4>
-                                    <p>
-                                        {{ promotion.description }}
-                                    </p>
+
                                 </div>
                             </a>
                         {% endfor %}

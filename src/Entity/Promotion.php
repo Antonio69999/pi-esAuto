@@ -79,7 +79,7 @@ class Promotion
     /**
      * Get the value of category
      */
-    public function getCategory()
+    public function getCategorie()
     {
         return $this->categorie;
     }
@@ -89,7 +89,7 @@ class Promotion
      *
      * @return  self
      */
-    public function setCategory($categorie)
+    public function setCategorie($categorie)
     {
         $this->categorie = $categorie;
 
