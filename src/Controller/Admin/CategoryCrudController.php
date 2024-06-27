@@ -39,14 +39,29 @@ class CategoryCrudController extends AbstractCrudController
         parent::persistEntity($em, $entityInstance); //appel de la méthode parent AbstractController
     }
 
-    public function deleteEntity(EntityManagerInterface $em, $entityInstance): void
-    {
-        if (!$entityInstance instanceof Categorie) return;
+    // public function deleteEntity(EntityManagerInterface $em, $entityInstance): void
+    // {
+    //     if (!$entityInstance instanceof Categorie) return;
 
-        foreach ($entityInstance->getProduits() as $product) {
-            $em->remove($product);
+    //     foreach ($entityInstance->getProduits() as $product) {
+    //         $em->remove($product);
+    //     }
+
+    //     parent::deleteEntity($em, $entityInstance);
+    // }
+
+    public function deleteBrandById(EntityManagerInterface $em, int $categorieId): bool
+    {
+        $categorie = $em->getRepository(Categorie::class)->find($categorieId);
+
+        if (!$categorie) {
+            // Optionally, you can throw an exception or return false to indicate the brand was not found
+            return false;
         }
 
-        parent::deleteEntity($em, $entityInstance);
+        $this->deleteEntity($em, $categorie);
+
+        // Assuming deleteEntity handles all operations successfully
+        return true;
     }
 }

@@ -33,14 +33,28 @@ class BrandCrudController extends AbstractCrudController
         ];
     }
 
-    public function deleteEntity(EntityManagerInterface $em, $entityInstance): void
-    {
-        if (!$entityInstance instanceof Marque) return;
+    // public function deleteEntity(EntityManagerInterface $em, $entityInstance): void
+    // {
+    //     if (!$entityInstance instanceof Marque) return;
 
-        foreach ($entityInstance->getProduits() as $product) {
-            $em->remove($product);
+    //     foreach ($entityInstance->getProduits() as $product) {
+    //         $em->remove($product);
+    //     }
+
+    //     parent::deleteEntity($em, $entityInstance);
+    // }
+    public function deleteBrandById(EntityManagerInterface $em, int $brandId): bool
+    {
+        $brand = $em->getRepository(Marque::class)->find($brandId);
+
+        if (!$brand) {
+            // Optionally, you can throw an exception or return false to indicate the brand was not found
+            return false;
         }
 
-        parent::deleteEntity($em, $entityInstance);
+        $this->deleteEntity($em, $brand);
+
+        // Assuming deleteEntity handles all operations successfully
+        return true;
     }
 }

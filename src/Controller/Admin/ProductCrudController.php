@@ -21,8 +21,6 @@ use Symfony\Component\HttpFoundation\Response;
 class ProductCrudController extends AbstractCrudController
 {
     public const ACTION_DUCPLICATE = 'duplicateProduct';
-    public const PRODUCT_BASE_PATH = '/uploads/images/product/';
-    public const PRODUCT_UPLOAD_DIR = 'public/uploads/images/product';
 
     public static function getEntityFqcn(): string
     {
@@ -44,9 +42,6 @@ class ProductCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('Nom'),
             MoneyField::new('Prix')->setCurrency('EUR'),
-            ImageField::new('Image')
-                ->setBasePath(self::PRODUCT_BASE_PATH)
-                ->setUploadDir(self::PRODUCT_UPLOAD_DIR),
             AssociationField::new('categorie'),
             DateTimeField::new('misAJourLe')->hideOnForm(),
             DateTimeField::new('CreeLe')->hideOnForm(),
