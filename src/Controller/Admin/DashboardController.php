@@ -41,6 +41,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        yield MenuItem::section('Website');
+        yield MenuItem::linkToUrl('Revenir sur le site', 'fas fa-external-link-alt', 'https://loirepiecesautos.fr/');
         // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::section('Categories');
