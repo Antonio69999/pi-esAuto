@@ -3,10 +3,10 @@
   box-sizing: border-box;
 }
 :root {
-  --block-bg-color:white;
-  --font-color:rgb(32, 31, 31);
-  --block-bg-banner:#3281ff;
-  --bg-footer:#1c1a32;
+  --block-bg-color: white;
+  --font-color: rgb(32, 31, 31);
+  --block-bg-banner: #3281ff;
+  --bg-footer: #1c1a32;
 }
 body {
   width: 100vw;
@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background:white;
+  background: white;
 }
 main {
   width: 100vw;
@@ -31,8 +31,8 @@ header {
   height: 150px;
   top: 0;
   left: 0;
-  background:var(--bg-footer);
-  border-bottom:1px solid white;
+  background: var(--bg-footer);
+  border-bottom: 1px solid white;
   z-index: 100;
   transition: all 0.2s ease-out;
 }
@@ -57,7 +57,7 @@ h1 {
   left: 100px;
   font-size: 40px;
   font-family: "Roboto", sans-serif;
-  color:white;
+  color: white;
   transition: all 0.2s ease-out;
 }
 .titletop {
@@ -65,12 +65,12 @@ h1 {
   top: 0px;
   left: 100px;
 }
-.tel{
+.tel {
   position: fixed;
   top: 80px;
   left: 100px;
   color: white;
-  z-index:200;
+  z-index: 200;
   transition: all 0.2s ease-out;
 }
 .teltop {
@@ -104,10 +104,10 @@ nav {
   position: absolute;
   width: 80%;
   height: 40px;
-  left:20%;
+  left: 20%;
   z-index: 100;
-  top:109px;
-  background:var(--block-bg-banner);
+  top: 109px;
+  background: var(--block-bg-banner);
   clip-path: polygon(5% 0%, 100% 0, 100% 100%, 0% 100%);
   transition: all 0.2s ease-out;
 }
@@ -116,9 +116,9 @@ nav {
   width: 100%;
   height: 40px;
   left: 0;
-  z-index:100;
+  z-index: 100;
   top: 80px;
-  border-bottom:1px solid white;
+  border-bottom: 1px solid white;
 }
 nav ul {
   margin: 0;
@@ -144,40 +144,40 @@ nav ul li a {
   transition: all 0.3s ease-in;
 }
 nav ul li a:hover {
-  color:var(--bg-footer);
+  color: var(--bg-footer);
 }
 .menu2 {
-  display:none;
+  display: none;
 }
 .fotorama {
   position: absolute;
   width: 100%;
   max-height: 400px;
   top: 0px;
-  background:black;
+  background: black;
 }
 .fotorama img {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
-.brand{
+.brand {
   margin-top: 200px;
   width: 100vw;
   height: 50px;
-  margin-bottom:50px;
+  margin-bottom: 50px;
   background-color: white;
   overflow: hidden;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
 }
 .brand img {
-  width:200px;
-  height:auto;
+  width: 200px;
+  height: auto;
   margin: 0 20px;
   object-fit: cover;
 }
-#devis{
+#devis {
   position: relative;
   width: 100vw;
   height: 500px;
@@ -186,97 +186,98 @@ nav ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color:var(--font-color);
+  color: var(--font-color);
 }
-#imgdevis{
-  position:absolute;
-  width:calc(100% - 400px);
-  height:400px;
-  margin-top:20px;
-  left:400px;
-  top:70px;
-  background:url(../images/rayons.jpg);
-  background-size:cover;
+#imgdevis {
+  position: absolute;
+  width: calc(100% - 400px);
+  height: 400px;
+  margin-top: 20px;
+  left: 400px;
+  top: 70px;
+  background: url(../images/rayons.jpg);
+  background-size: cover;
 }
-#contact{
-  position:absolute;
-  width:400px;
-  height:400px;
-  margin-bottom:70px;
-  left:0;
-  top:90px;
-  padding:10px;
-  background:rgb(230, 230, 230);
+#contact {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 70px;
+  left: 0;
+  top: 90px;
+  padding: 10px;
+  background: rgb(230, 230, 230);
 }
-#contact span{
-  display:block;
-  height:30px;
-  font-weight:bold;
-  font-family:Helvetica, sans-serif;
-  color:var(--block-bg-banner);
-  text-align:center;
+#contact span {
+  display: block;
+  height: 30px;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  color: var(--block-bg-banner);
+  text-align: center;
 }
-form{
-  position:absolute;
-  width:90%;
-  height:90%;
-  height:auto;
-  left:5%;
-  top:10%;
+form {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  height: auto;
+  left: 5%;
+  top: 10%;
 }
 ::placeholder {
-  color:var(--font-color);
-  opacity:0.7;
+  color: var(--font-color);
+  opacity: 0.7;
 }
-input[type="text"]{
-  width:100%;
-  height:30px;
-  background:white;
-  border:none;
-  outline:none;
-  border-radius:5px;
-  color:var(--font-color);
+input[type="text"] {
+  width: 100%;
+  height: 30px;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: var(--font-color);
 }
-input[type="email"]{
-  width:100%;
-  height:30px;
-  background:white;
-  outline:none;
-  border:none;
-  border-radius:5px;
-  color:var(--font-color);
+input[type="email"] {
+  width: 100%;
+  height: 30px;
+  background: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: var(--font-color);
 }
-textarea{
-  width:100%;
-  height:100px;
-  background:white;
-  outline:none;
-  border:none;
-  border-radius:5px;
-  color:var(--font-color);
+textarea {
+  width: 100%;
+  height: 100px;
+  background: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: var(--font-color);
 }
-textarea:focus, input:focus{
-  border:none;
-  outline:none;
+textarea:focus,
+input:focus {
+  border: none;
+  outline: none;
 }
-#contact_submit{
-  width:100%;
-  height:30px;
-  background:var(--block-bg-banner);
-  border:none;
-  outline:none;
-  border-radius:5px;
-  color:white;
-  cursor:pointer;
-  transition:all 0.3s linear;
+#contact_submit {
+  width: 100%;
+  height: 30px;
+  background: var(--block-bg-banner);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s linear;
 }
-#contact_submit:hover{
-  background:white;
-  color:black;
+#contact_submit:hover {
+  background: white;
+  color: black;
 }
 .flash {
-  margin-top:-10px;
-  color:var(--font-color);
+  margin-top: -10px;
+  color: var(--font-color);
 }
 #presentation {
   position: relative;
@@ -287,36 +288,36 @@ textarea:focus, input:focus{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background:var(--block-bg-color);
-  color:var(--font-color);
+  background: var(--block-bg-color);
+  color: var(--font-color);
 }
-.reassurance{
-  height:130px;
-  width:100%;
-  background:rgb(198, 198, 198);
-  display:flex;
-  justify-content:space-evenly;
+.reassurance {
+  height: 130px;
+  width: 100%;
+  background: rgb(198, 198, 198);
+  display: flex;
+  justify-content: space-evenly;
 }
-.block_icon{
-  height:130px;
-  width:250px;
-  padding-top:10px;
-  text-align:center;
+.block_icon {
+  height: 130px;
+  width: 250px;
+  padding-top: 10px;
+  text-align: center;
 }
-.block_icon p{
-  font-size:15px;
-  font-weight:bold;
-  color:#3281ff;
+.block_icon p {
+  font-size: 15px;
+  font-weight: bold;
+  color: #3281ff;
 }
-.block_icon span{
-  font-weight:lighter;
-  color:#3281ff;
+.block_icon span {
+  font-weight: lighter;
+  color: #3281ff;
 }
 .banner {
   position: relative;
   height: 70px;
   width: 100vw;
-  background:var( --block-bg-banner);
+  background: var(--block-bg-banner);
   z-index: 50;
 }
 .banner h2 {
@@ -356,7 +357,7 @@ textarea:focus, input:focus{
   height: 70%;
   top: 10%;
   left: 15%;
-  background: url(../images/photoequipe.jpg);
+  background: url(../images/homePic.jpg);
   background-size: cover;
 }
 #produits {
@@ -405,8 +406,8 @@ textarea:focus, input:focus{
   text-align: center;
   font-size: 30px;
   line-height: 390px;
-  color:white;
-  border: 2px solid var( --block-bg-banner);
+  color: white;
+  border: 2px solid var(--block-bg-banner);
 }
 .link:hover {
   background: rgba(0, 0, 0, 0);
@@ -427,7 +428,7 @@ textarea:focus, input:focus{
 }
 #promos a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 .blockpromo {
   margin: 50px 20px;
@@ -436,7 +437,7 @@ textarea:focus, input:focus{
 }
 .no_promo {
   font-style: italic;
-  color:var(--font-color);
+  color: var(--font-color);
   text-align: center;
   margin: 20px 0;
 }
@@ -448,12 +449,13 @@ textarea:focus, input:focus{
   float: left;
   shape-outside: margin-box;
 }
-.blockpromo h3, h4{
-  color:#cf0000;
+.blockpromo h3,
+h4 {
+  color: #cf0000;
 }
 .blockpromo p {
   width: 600px;
-  color:var(--font-color);
+  color: var(--font-color);
 }
 footer {
   position: relative;
@@ -461,7 +463,7 @@ footer {
   height: 200px;
   top: 0;
   margin-top: 50px;
-  background:var(--bg-footer);
+  background: var(--bg-footer);
 }
 footer nav {
   text-align: center;
@@ -487,7 +489,7 @@ footer nav ul {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   transition: all 0.2s ease-out;
-  color:var(--font-color);
+  color: var(--font-color);
   text-decoration: none;
 }
 .politique {
@@ -511,10 +513,9 @@ footer nav ul {
   h1 .slogan {
     display: none;
   }
-  .fotorama{
-    display:none;
-  } 
-  
+  .fotorama {
+    display: none;
+  }
 }
 @media screen and (max-width: 800px) {
   nav {
@@ -553,20 +554,20 @@ footer nav ul {
   }
   .menu2 {
     position: fixed;
-    display:block;
-    width:150px;
-    height:100%;
+    display: block;
+    width: 150px;
+    height: 100%;
     top: 0;
-    left:-150px;
+    left: -150px;
   }
   .menu2_open {
-    position:relative;
-    display:block;
+    position: relative;
+    display: block;
     top: 0;
     left: 0px;
     width: 200px;
     height: 100vh;
-    z-index:200;
+    z-index: 200;
   }
   .menu2 ul {
     position: absolute;
@@ -575,7 +576,7 @@ footer nav ul {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background:#1c1a32;
+    background: #1c1a32;
   }
   .menu2 ul li {
     height: 40px;
@@ -587,16 +588,16 @@ footer nav ul {
     width: 150px;
     font-weight: 100;
     line-height: 40px;
-    color:white;
+    color: white;
     text-decoration: none;
     border-bottom: 1px solid var(--block-bg-banner);
     transition: all 0.3s ease-in;
   }
   .menu2 ul li a:hover {
-    color:var(--block-bg-banner);
+    color: var(--block-bg-banner);
   }
-  .close{
-    position:relative;
+  .close {
+    position: relative;
     height: 40px;
     width: 40px;
     left: 155px;
@@ -608,7 +609,7 @@ footer nav ul {
     height: 2px;
     width: 40px;
     top: 50%;
-    background:white;
+    background: white;
     transition: all 0.2s ease-in-out;
   }
   #line1::before,
@@ -617,7 +618,7 @@ footer nav ul {
     position: absolute;
     width: 40px;
     height: 2px;
-    background:white;
+    background: white;
     transition: transform 0.3s ease-in-out;
   }
   #line1::before {
@@ -681,7 +682,7 @@ footer nav ul {
     top: 30px;
     transform: translateX(-50%);
   }
-  #devis{
+  #devis {
     margin-top: 200px;
   }
   #block_img {
@@ -728,36 +729,36 @@ footer nav ul {
   .slogan {
     display: none;
   }
-  #devis{
+  #devis {
     margin-top: 200px;
   }
-  #imgdevis{
-    display:none;
+  #imgdevis {
+    display: none;
   }
-  .block_icon p{
-    font-size:12px;
+  .block_icon p {
+    font-size: 12px;
   }
-  #contact{
-    width:100%;
+  #contact {
+    width: 100%;
   }
 }
 @media screen and (max-width: 320px) {
   .banner h2 {
     position: absolute;
-    width:100%;
-    left:0;
+    width: 100%;
+    left: 0;
     top: -5px;
     font-weight: 100;
     font-size: 20px;
-    text-align:center;
+    text-align: center;
   }
-  .block_icon svg{
-    height:20px;
-    width:20px;
+  .block_icon svg {
+    height: 20px;
+    width: 20px;
   }
-  .block_icon span{
-    font-size:10px;
-    font-weight:lighter;
-    color:#3281ff;
+  .block_icon span {
+    font-size: 10px;
+    font-weight: lighter;
+    color: #3281ff;
   }
 }
